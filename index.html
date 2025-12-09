@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AI OptiBotX</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css" />
+<!-- Lightweight Charts -->
+<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+  <div class="app-container" role="main" aria-labelledby="title">
+    <header class="app-header">
+      <h1 id="title">AI OptiBotX</h1>
+      <button id="lang-toggle" class="icon-btn" title="Toggle language">RU</button>
+    </header>
+
+    <label id="pair-label" class="field-label">Select currency pair:</label>
+    <div class="select-wrap">
+      <select id="pair" aria-label="Currency pair"></select>
+      <div class="select-arrow">▾</div>
+    </div>
+
+    <div id="chart-block" class="chart-block">
+      <div id="chart" class="chart"></div>
+    </div>
+
+    <div class="timeframe-row" id="timeframe-row"></div>
+
+    <div class="controls-row">
+      <button id="analyze" class="primary ripple">Analyze</button>
+      <div id="result" aria-live="polite" class="result-text"></div>
+    </div>
+
+    <button id="install-btn" class="primary ripple hidden">Install App</button>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
