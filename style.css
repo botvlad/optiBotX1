@@ -251,3 +251,29 @@ button:focus, select:focus {
 .time-btn.active {
     background: linear-gradient(90deg, #00c853, #8a2be2);
 }
+
+/* Calculator block */
+.calculator {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+}
+
+#calc-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #1f1f1f;
+    color: white;
+    font-size: 18px;
+}
+
+.calc-result {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    min-height: 28px;
+}

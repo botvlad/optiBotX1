@@ -440,3 +440,25 @@ timeButtons.forEach(btn => {
 });
 
 updateActiveTime();
+
+// --- Calculator logic ---
+const calcInput = document.getElementById('calc-input');
+const calcBtn = document.getElementById('calc-divide');
+const calcResult = document.getElementById('calc-result');
+
+if (calcBtn) {
+    calcBtn.addEventListener('click', () => {
+        const value = parseFloat(calcInput.value);
+
+        if (isNaN(value)) {
+            calcResult.textContent = 'Введите число';
+            calcResult.style.color = '#f87171';
+            return;
+        }
+
+        const result = value / 11;
+
+        calcResult.textContent = "= " + result.toFixed(4);
+        calcResult.style.color = '#4ade80';
+    });
+}
