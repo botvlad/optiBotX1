@@ -1,25 +1,35 @@
-AI OptiBotX — PWA (candlestick version)
-=======================================
+Chart Analysis Tool — PWA
+========================
 
-This package contains a client-side PWA using Lightweight Charts (candlestick series)
-and TwelveData REST API. For sub-minute candlesticks (5s/10s/etc.) the app aggregates
-incoming `quote` responses into small candles client-side.
+Файлы:
+  - index.html
+  - style.css
+  - app.js
+  - manifest.json
+  - service-worker.js
+  - icons/icon-192.png
+  - icons/icon-512.png
 
-Important:
-- Replace API_KEY in app.js with your TwelveData API key or implement a serverless
-  proxy to keep the key secret.
-- TwelveData free plan may limit frequency; if you need higher reliability consider
-  a small serverless function as a proxy or a paid WebSocket feed.
+Быстрая инструкция для деплоя на GitHub + Vercel:
 
-To test locally:
-- Unzip and run a static server (python -m http.server) and open in browser.
-- Ensure CORS allows requests (TwelveData is public).
+1) Инициализируй git-репозиторий:
+   git init
+   git add .
+   git commit -m "Initial PWA commit"
 
-Files:
-- index.html
-- style.css
-- app.js  (replace API key)
-- manifest.json
-- service-worker.js
-- icon-192.png, icon-512.png (copied if present)
-- README.md
+2) Создай репозиторий на GitHub и запушь:
+   git remote add origin https://github.com/USERNAME/REPO.git
+   git branch -M main
+   git push -u origin main
+
+3) Перейди в Vercel, импортируй репозиторий и задеплой.
+   По умолчанию Vercel сам развернёт статический сайт.
+
+4) После деплоя проверь:
+   - Открой сайт в Chrome на телефоне.
+   - Нажми в меню "Добавить на главный экран".
+   - Отключи интернет — приложение должно открываться (кэш).
+
+Примечание:
+- Для реального AI-анализа нужно прикрутить бэкенд (API).
+- Если иконки выглядят слишком простыми — замени icons/*.png на свои.
