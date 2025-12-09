@@ -56,40 +56,40 @@ function applyLang() {
 }
 
 
+
 function populatePairs() {
-    const mainPairs = ['EUR/USD','USD/JPY','GBP/USD','USD/CHF','USD/CAD','AUD/USD','NZD/USD'];
+    const mainPairs = [
+        'EUR/USD','USD/JPY','GBP/USD','USD/CHF','USD/CAD','AUD/USD','NZD/USD'
+    ];
     const otherPairs = [
         'EUR/GBP','EUR/JPY','GBP/JPY','AUD/JPY','CHF/JPY','USD/SGD','USD/HKD','USD/TRY',
         'EUR/AUD','CAD/JPY','NZD/JPY','AUD/NZD','EUR/CAD','GBP/CAD','AUD/CAD','NZD/CAD',
         'GBP/AUD','EUR/CHF','GBP/CHF','AUD/CHF','NZD/CHF','EUR/NZD','GBP/NZD',
-        'USD/ZAR','USD/MXN','USD/PLN','USD/DKK','USD/NOK','USD/SEK','EUR/PLN','EUR/TRY','EUR/SEK',
-        'GBP/SEK','AUD/SGD','CAD/CHF','CHF/PLN','NZD/CHF'
+        'USD/ZAR','USD/MXN','USD/PLN','USD/DKK','USD/NOK','USD/SEK','EUR/PLN',
+        'EUR/TRY','EUR/SEK','GBP/SEK','AUD/SGD','CAD/CHF','CHF/PLN','NZD/CHF'
     ];
     const otcPairs = [
         'EUR/USD OTC','GBP/USD OTC','USD/JPY OTC','AUD/USD OTC','USD/CAD OTC','USD/CHF OTC',
-        'NZD/USD OTC','GBP/JPY OTC','EUR/JPY OTC'
+        'NZD/USD OTC','EUR/JPY OTC','GBP/JPY OTC','AUD/JPY OTC',
+        'EUR/GBP OTC','EUR/CHF OTC','GBP/CHF OTC','CAD/JPY OTC','CHF/JPY OTC',
+        'EUR/AUD OTC','EUR/CAD OTC','EUR/NZD OTC','GBP/AUD OTC','GBP/NZD OTC',
+        'AUD/CAD OTC','AUD/CHF OTC','AUD/NZD OTC','NZD/CAD OTC','NZD/CHF OTC'
     ];
     if (!els.pairSelect) return;
-
-    // Перевод пункта "Анализ по фото"
     const analysisOption = (lang === 'ru') ? 'Анализ по фото' : 'Photo analysis';
-
     let html = `<option value="${analysisOption}">${analysisOption}</option>`;
-
     html += '<optgroup label="Main Pairs">';
-    mainPairs.forEach(p => { html += `<option value="${p}">${p}</option>`; });
+    mainPairs.forEach(p => html += `<option value="${p}">${p}</option>`);
     html += '</optgroup>';
-
     html += '<optgroup label="Other Pairs">';
-    otherPairs.forEach(p => { html += `<option value="${p}">${p}</option>`; });
+    otherPairs.forEach(p => html += `<option value="${p}">${p}</option>`);
     html += '</optgroup>';
-
     html += '<optgroup label="Pocket Option OTC">';
-    otcPairs.forEach(p => { html += `<option value="${p}">${p}</option>`; });
+    otcPairs.forEach(p => html += `<option value="${p}">${p}</option>`);
     html += '</optgroup>';
-
     els.pairSelect.innerHTML = html;
 }
+
 
 
 function showPreview(file) {
