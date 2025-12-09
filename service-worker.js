@@ -1,6 +1,6 @@
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open('forex-pwa-cache-v2').then((cache) => {
+        caches.open('forex-pwa-cache').then((cache) => {
             return cache.addAll([
                 '/icon-192.png',
                 '/icon-512.png',
